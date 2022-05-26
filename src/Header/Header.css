@@ -1,0 +1,18 @@
+.header{
+    border: 1px solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.header-item{
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 5rem;
+}

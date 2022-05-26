@@ -1,10 +1,23 @@
+import { BrowserRouter, Route } from 'react-router-dom';
+import Header from "./Header/Header"
+import Home from "./Home/Home"
+import Cart from "./Cart/Cart"
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      hello from app
-    </div>
+    <BrowserRouter>
+      <Header />
+        <div className="app">
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+        </div>
+    </BrowserRouter>
   );
 }
 
