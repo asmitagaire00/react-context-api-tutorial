@@ -1,11 +1,15 @@
+import { useContext } from "react";
+import { CartContext } from "../../Context";
 import "./SingleProduct.css";
 
-export default function SingleProduct({ prod, cart, setCart }) {
+export default function SingleProduct({ prod }) {
   const handleAddItem = (e) => {
     e.preventDefault();
     setCart([...cart, prod]);
     console.log("prodname", prod);
   };
+
+  const { cart, setCart } = useContext(CartContext);
 
   return (
     <div className="singleproduct">

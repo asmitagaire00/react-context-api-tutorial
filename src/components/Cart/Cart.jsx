@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../../Context";
 import "./Cart.css";
 
-export default function Cart({ cart, setCart }) {
+export default function Cart() {
   const [total, setTotal] = useState();
+
+  const { cart, setCart } = useContext(CartContext);
 
   useEffect(() => {
     setTotal(
@@ -46,7 +49,6 @@ export default function Cart({ cart, setCart }) {
             </div>
           );
         })}
-        <div>Total item: {cart.length}</div>
         <span>Total:{total}</span>
       </div>
     </div>

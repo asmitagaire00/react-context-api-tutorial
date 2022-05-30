@@ -2,7 +2,7 @@ import SingleProduct from "../SingleProduct/SingleProduct";
 import "./Home.css";
 const { faker } = require("@faker-js/faker");
 
-export default function Home({ cart, setCart }) {
+export default function Home() {
   faker.seed(100);
   const productsArray = [...Array(10)].map((p) => ({
     id: faker.random.numeric(),
@@ -14,14 +14,7 @@ export default function Home({ cart, setCart }) {
   return (
     <div className="home">
       {productsArray.map((prod) => {
-        return (
-          <SingleProduct
-            prod={prod}
-            key={prod.price + prod.id}
-            cart={cart}
-            setCart={setCart}
-          />
-        );
+        return <SingleProduct prod={prod} key={prod.price + prod.id} />;
       })}
     </div>
   );
